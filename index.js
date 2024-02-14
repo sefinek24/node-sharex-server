@@ -1,9 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const cors = require('cors');
 const helmet = require('helmet');
-const path = require('node:path');
 const timeout = require('./middlewares/timeout.js');
 const logger = require('./middlewares/morgan.js');
 const limiter = require('./middlewares/ratelimit.js');
@@ -18,7 +16,6 @@ app.set('trust proxy', 1);
 
 
 // Use
-app.use(cors());
 app.use(helmet({ crossOriginEmbedderPolicy: false, crossOriginResourcePolicy: false }));
 app.use(logger);
 app.use(limiter);
@@ -35,10 +32,10 @@ app.get('/', (req, res) =>
 		version,
 		worker: process.pid,
 		contact: 'contact@sefinek.net',
-		domain: {
+		domains: {
 			main: 'https://sefinek.net',
 			api: 'https://api.sefinek.net',
-			cdn: 'https://screenshots.sefinek.net',
+			cdn: 'https://cdn.sefinek.net',
 		},
 	}, null, 3)),
 );

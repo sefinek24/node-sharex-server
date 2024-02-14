@@ -3,7 +3,7 @@ const { rateLimited } = require('../middlewares/other/errors.js');
 
 module.exports = rateLimit({
 	windowMs: 5 * 60 * 1000,
-	limit: 500,
+	limit: 12,
 	standardHeaders: 'draft-7',
 	legacyHeaders: false,
 
