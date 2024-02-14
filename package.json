@@ -1,6 +1,6 @@
 {
   "name": "screenshots.sefinek.net",
-  "version": "2.5.3",
+  "version": "1.0.0",
   "description": "Screenshots from Sharex.",
   "main": "index.js",
   "scripts": {
