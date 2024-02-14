@@ -1,6 +1,6 @@
 module.exports = {
 	apps: [{
-		name: 'screenshots',
+		name: 'sharex',
 		script: './index.js',
 
 		// Configuration options
@@ -14,9 +14,9 @@ module.exports = {
 		// Logging settings
 		log_date_format: 'HH:mm:ss.SSS DD.MM.YYYY',
 		merge_logs: true,
-		log_file: '/home/ubuntu/logs/www/screenshots.sefinek.net/combined.log',
-		out_file: '/home/ubuntu/logs/www/screenshots.sefinek.net/out.log',
-		error_file: '/home/ubuntu/logs/www/screenshots.sefinek.net/error.log',
+		log_file: '/home/sefinek/logs/www/screenshots.sefinek.net/combined.log',
+		out_file: '/home/sefinek/logs/www/screenshots.sefinek.net/out.log',
+		error_file: '/home/sefinek/logs/www/screenshots.sefinek.net/error.log',
 
 		// Application restart policy
 		wait_ready: true,
