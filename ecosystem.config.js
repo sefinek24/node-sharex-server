@@ -1,6 +1,6 @@
 module.exports = {
 	apps: [{
-		name: 'cdn',
+		name: 'screenshots',
 		script: './index.js',
 
 		// Configuration options
