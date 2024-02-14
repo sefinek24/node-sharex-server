@@ -1,0 +1,32 @@
+{
+  "name": "screenshots.sefinek.net",
+  "version": "2.5.3",
+  "description": "Screenshots from Sharex.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "up": "ncu -u && npm install && npm update && npm audit fix",
+    "sync": "git pull --recurse-submodules",
+    "usm": "git submodule update --remote",
+    "mon": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sefinek24/screenshots.sefinek.net.git"
+  },
+  "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "license": "CC BY-NC-SA 4.0",
+  "bugs": {
+    "url": "https://github.com/sefinek24/screenshots.sefinek.net/issues"
+  },
+  "homepage": "https://github.com/sefinek24/screenshots.sefinek.net#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "express-timeout-handler": "^2.2.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0"
+  }
+}

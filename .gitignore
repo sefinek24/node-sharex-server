@@ -1,0 +1,7 @@
+.idea
+.env
+npm update.cmd
+node_modules
+
+/public/temp
+/submodule/Stella-Mod-Resources/patrons/*.zip
