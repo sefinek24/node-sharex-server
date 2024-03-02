@@ -26,20 +26,20 @@ Please visit [this](https://github.com/sefinek24/cloudflare-waf-expressions) rep
 A value of 1 indicates a single proxy server. This adjustment is necessary for the server to accurately read the IP addresses of visitors.
 
 ## 📝 How to use?
-1. Clone the repository
+1. Clone the repository:
     ```bash
     git clone https://github.com/sefinek24/sharex-express-server.git
     ```
-2. Install the necessary packages using `npm install`
-3. Rename the `.env.default` file to `.env` and fill in the necessary data
-4. Run the server using `node .`
-5. Hosting
+2. Install the necessary packages using `npm install`.
+3. Rename the `.env.default` file to `.env` and fill in the necessary data.
+4. Run the server using `node .`.
+5. Hosting:
     - **At home (if you lack open ports or an external IP)** \
         See [Cloudflare Tunnel Documentation](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel). Remember, your domain must have Cloudflare DNS settings (at least that's what I believe).
-6. File server
+6. File server:
     - **SAMBA** \
-        See [this](https://phoenixnap.com/kb/ubuntu-samba) tutorial
-7. Configuration
+        See [this](https://phoenixnap.com/kb/ubuntu-samba) tutorial.
+7. Configuration:
    - **Windows** \
      ![windows.png](images/readme/windows.png)
    - **Sharex** \
