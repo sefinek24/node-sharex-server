@@ -31,7 +31,6 @@ app.get('/', (req, res) =>
 		message: description,
 		version,
 		worker: process.pid,
-		contact: 'contact@sefinek.net',
 		domains: {
 			main: 'https://sefinek.net',
 			api: 'https://api.sefinek.net',
