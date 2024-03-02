@@ -1,7 +1,7 @@
 {
-  "name": "screenshots.sefinek.net",
-  "version": "1.0.0",
-  "description": "Screenshots from Sharex.",
+  "name": "sharex-express-server",
+  "version": "1.0.1",
+  "description": "Node.js project utilizing Express.js for hosting screenshots taken with ShareX.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sefinek24/screenshots.sefinek.net.git"
+    "url": "git+https://github.com/sefinek24/sharex-express-server.git"
   },
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
-  "license": "CC BY-NC-SA 4.0",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sefinek24/screenshots.sefinek.net/issues"
+    "url": "https://github.com/sefinek24/sharex-express-server/issues"
   },
-  "homepage": "https://github.com/sefinek24/screenshots.sefinek.net#readme",
+  "homepage": "https://github.com/sefinek24/sharex-express-servert#readme",
   "dependencies": {
-    "dotenv": "^16.4.4",
-    "express": "^4.18.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
     "express-rate-limit": "^7.1.5",
     "express-timeout-handler": "^2.2.2",
     "helmet": "^7.1.0",
