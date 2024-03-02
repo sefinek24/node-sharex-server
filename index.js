@@ -36,7 +36,7 @@ app.get('/', (req, res) =>
 			api: 'https://api.sefinek.net',
 			cdn: 'https://cdn.sefinek.net',
 		},
-	}, null, 3)),
+	}, null, 4)),
 );
 
 
