@@ -18,7 +18,7 @@ With this solution, you don't have to upload screenshots to external services.
 Being an administrator, you can delete screenshots from the server with just a few clicks, thereby revoking everyone's access to the screenshot file.
 
 ## ☁️ Cloudflare Integration
-For those utilizing CF, enhancing your security measures by incorporating specific expressions into the Web Application Firewall (WAF) comes highly recommended.
+For those utilizing CF, enhancing your security measures by incorporating specific expressions into the [Web Application Firewall](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf) (WAF) comes highly recommended.
 This approach can significantly bolster your website's defense.
 Please visit [this](https://github.com/sefinek24/cloudflare-waf-expressions) repository.
 
