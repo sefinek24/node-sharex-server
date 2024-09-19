@@ -1,12 +1,12 @@
 require('dotenv').config();
 
 const http = require('node:http');
-const cors = require('cors');
 const helmet = require('helmet');
-const getClientIp = require('./middlewares/other/getClientIp.js');
+const cors = require('cors');
 const morgan = require('./middlewares/morgan.js');
 const ratelimit = require('./middlewares/ratelimit.js');
 const timeout = require('./middlewares/timeout.js');
+const getClientIp = require('./middlewares/other/getClientIp.js');
 const { internalError } = require('./middlewares/other/errors.js');
 const serveStaticFiles = require('./middlewares/other/serve.js');
 const { version, description } = require('./package.json');
