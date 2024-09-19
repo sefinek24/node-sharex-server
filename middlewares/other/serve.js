@@ -24,7 +24,7 @@ const servePaths = {
 	'default': 'public'
 };
 
-const serveStaticFiles = async (req, res) => {
+module.exports = async (req, res) => {
 	try {
 		const cleanUrl = req.url.split('?')[0];
 		const basePath = Object.keys(servePaths).find(p => cleanUrl.startsWith(p)) || 'default';
@@ -45,5 +45,3 @@ const serveStaticFiles = async (req, res) => {
 		notFound(req, res);
 	}
 };
-
-module.exports = serveStaticFiles;
