@@ -3,22 +3,15 @@ require('dotenv').config();
 const http = require('node:http');
 const cors = require('cors');
 const helmet = require('helmet');
+const getClientIp = require('./middlewares/getClientIp.js');
+const morgan = require('./middlewares/morgan.js');
 const ratelimit = require('./middlewares/ratelimit.js');
 const timeout = require('./middlewares/timeout.js');
-const morgan = require('./middlewares/morgan.js');
 const { internalError } = require('./middlewares/other/errors.js');
 const serveStaticFiles = require('./middlewares/serve.js');
 const { version, description } = require('./package.json');
 
 const middlewares = [cors(), helmet(), morgan, ratelimit, timeout()];
-
-const getClientIp = req => {
-	console.log(req.socket.remoteAddress);
-	console.log(req.headers['x-forwarded-for']);
-
-	const xForwardedFor = req.headers['x-forwarded-for'];
-	return xForwardedFor ? xForwardedFor.split(',')[0].trim() : req.socket.remoteAddress;
-};
 
 const applyMiddlewares = async (req, res) => {
 	req.clientIp = getClientIp(req);
