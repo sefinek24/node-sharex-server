@@ -2,8 +2,8 @@ const fs = require('node:fs');
 
 const images = {
 	notFound: 'images/404.png',
-	rateLimited: 'images/429.png',
-	internalError: 'images/500.png',
+	ratelimit: 'images/429.png',
+	internal: 'images/500.png',
 	timeout: 'images/503.png'
 };
 
@@ -18,10 +18,10 @@ const sendFile = (res, statusCode, filePath) => {
 
 exports.notFound = (req, res) => sendFile(res, 404, images.notFound);
 
-exports.rateLimited = (req, res) => sendFile(res, 429, images.rateLimited);
+exports.rateLimited = (req, res) => sendFile(res, 429, images.ratelimit);
 
 exports.internalError = (err, req, res) => {
-	sendFile(res, 500, images.internalError);
+	sendFile(res, 500, images.internal);
 	if (err) console.error(err);
 };
 
