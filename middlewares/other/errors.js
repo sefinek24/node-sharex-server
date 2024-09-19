@@ -16,13 +16,13 @@ const sendFile = (res, statusCode, filePath) => {
 	});
 };
 
-exports.notFound = (req, res) => sendFile(res, 404, images.notFound);
+exports.notFound = (_, res) => sendFile(res, 404, images.notFound);
 
-exports.rateLimited = (req, res) => sendFile(res, 429, images.ratelimit);
+exports.rateLimited = (_, res) => sendFile(res, 429, images.ratelimit);
 
-exports.internalError = (err, req, res) => {
+exports.internalError = (err, _, res) => {
 	sendFile(res, 500, images.internal);
 	if (err) console.error(err);
 };
 
-exports.onTimeout = (req, res) => sendFile(res, 503, images.timeout);
+exports.onTimeout = (_, res) => sendFile(res, 503, images.timeout);
