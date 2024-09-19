@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const mime = require('mime-types');
-const { internalError, notFound } = require('../middlewares/other/errors.js');
+const { internalError, notFound } = require('./errors.js');
 
 const CACHE_DURATION = 20 * 24 * 60 * 60; // 20 days
 
