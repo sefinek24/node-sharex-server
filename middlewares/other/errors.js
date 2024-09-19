@@ -1,24 +1,31 @@
-const path = require('node:path');
+const fs = require('node:fs');
 
-const notFoundImg = path.join(__dirname, '..', '..', 'images', '404.png');
-const rateLimitedImg = path.join(__dirname, '..', '..', 'images', '429.png');
-const internalErrorImg = path.join(__dirname, '..', '..', 'images', '500.png');
-
-exports.notFound = (req, res) => {
-	res.status(404).sendFile(notFoundImg);
+const errorImages = {
+	notFound: 'images/404.png',
+	rateLimited: 'images/429.png',
+	internalError: 'images/500.png'
 };
 
-exports.rateLimited = (req, res, next, options) => {
-	res.status(options.statusCode).sendFile(rateLimitedImg);
+const sendFile = (res, statusCode, filePath) => {
+	res.writeHead(statusCode, { 'Content-Type': 'image/png' });
+	const readStream = fs.createReadStream(filePath);
+	readStream.pipe(res);
+	readStream.on('error', () => {
+		res.writeHead(500, { 'Content-Type': 'text/html' });
+		res.end('<h1>File could not be read</h1>');
+	});
 };
 
-exports.internalError = (err, req, res, next) => {
-	res.status(500).sendFile(internalErrorImg);
+exports.notFound = (req, res) => sendFile(res, 404, errorImages.notFound);
 
+exports.rateLimited = (req, res) => sendFile(res, 429, errorImages.rateLimited);
+
+exports.internalError = (err, req, res) => {
+	sendFile(res, 500, errorImages.internalError);
 	if (err) console.error(err);
-	return next;
 };
 
 exports.onTimeout = (req, res) => {
-	res.status(503).send('<h1>Timeout error</h1>');
+	res.writeHead(503, { 'Content-Type': 'text/html' });
+	res.end('<h1>Timeout error</h1>');
 };

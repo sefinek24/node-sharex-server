@@ -1,13 +1,24 @@
-const rateLimit = require('express-rate-limit');
 const { rateLimited } = require('../middlewares/other/errors.js');
 
-module.exports = rateLimit({
-	windowMs: 5 * 60 * 1000,
-	limit: 12,
-	standardHeaders: 'draft-7',
-	legacyHeaders: false,
+const rateLimitMap = new Map();
+const WINDOW_MS = 5 * 60 * 1000;
+const LIMIT = 12;
 
-	skip: req => req.ip === '::ffff:127.0.0.1',
+module.exports = (req, res, next) => {
+	if (process.env.NODE_ENV === 'development') return next();
 
-	handler: rateLimited,
-});
+	const currentTime = Date.now();
+	const ip = req.socket.remoteAddress;
+
+	const entry = rateLimitMap.get(ip) || { count: 0, startTime: currentTime };
+	if (currentTime - entry.startTime > WINDOW_MS) {
+		entry.count = 1;
+		entry.startTime = currentTime;
+	} else {
+		entry.count++;
+		if (entry.count > LIMIT) return rateLimited(req, res);
+	}
+
+	rateLimitMap.set(ip, entry);
+	next();
+};

@@ -1,4 +1,4 @@
-# 📷 Sharex Express.js Server
+# 📷 Sharex Node.js Server
 This project allows for the launching of a local server, intended for hosting screenshots taken with the [Sharex](https://getsharex.com/) program.
 
 ## ✔️ What does it include?
@@ -28,7 +28,7 @@ A value of 1 indicates a single proxy server. This adjustment is necessary for t
 ## 📝 How to use?
 1. Clone the repository:
     ```bash
-    git clone https://github.com/sefinek24/sharex-express-server.git
+    git clone https://github.com/sefinek24/node-sharex-server.git
     ```
 2. Install the necessary packages using `npm install`.
 3. Rename the `.env.default` file to `.env` and fill in the necessary data.
@@ -48,7 +48,7 @@ A value of 1 indicates a single proxy server. This adjustment is necessary for t
 8. That's it! You can now take screenshots and upload them to your server.
 
 ## 💙 Thank you
-If you find this repository useful, please consider giving it a star. If you need assistance or have any questions, feel free to open a new [Issue](https://github.com/sefinek24/sharex-express-server/issues).
+If you find this repository useful, please consider giving it a star. If you need assistance or have any questions, feel free to open a new [Issue](https://github.com/sefinek24/node-sharex-server/issues).
 
 ## 📑 License
 This project is licensed under the [MIT License](LICENSE).

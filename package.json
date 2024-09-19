@@ -1,7 +1,7 @@
 {
-  "name": "sharex-express-server",
-  "version": "1.0.1",
-  "description": "Node.js project utilizing Express.js for hosting screenshots taken with ShareX.",
+  "name": "node-sharex-server",
+  "version": "2.0.0",
+  "description": "Node.js project for hosting screenshots captured with ShareX.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,20 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sefinek24/sharex-express-server.git"
+    "url": "git+https://github.com/sefinek24/node-sharex-server.git"
   },
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sefinek24/sharex-express-server/issues"
+    "url": "https://github.com/sefinek24/node-sharex-server/issues"
   },
-  "homepage": "https://github.com/sefinek24/sharex-express-servert#readme",
+  "homepage": "https://github.com/sefinek24/node-sharex-servert#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.18.3",
-    "express-rate-limit": "^7.1.5",
     "express-timeout-handler": "^2.2.2",
     "helmet": "^7.1.0",
+    "mime-types": "^2.1.35",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "globals": "^15.9.0"
   }
 }
