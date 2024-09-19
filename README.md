@@ -1,4 +1,4 @@
-# 📷 Sharex Node.js Server
+# 📷 ShareX Node.js Server
 This project allows for the launching of a local server, intended for hosting screenshots taken with the [Sharex](https://getsharex.com/) program.
 
 ## ✔️ What does it include?
