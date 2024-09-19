@@ -8,10 +8,9 @@ const images = {
 };
 
 const sendFile = (res, statusCode, filePath) => {
-	res.writeHead(statusCode, { 'Content-Type': 'image/png' });
 	const readStream = fs.createReadStream(filePath);
-	readStream.pipe(res);
-	readStream.on('error', () => {
+	res.writeHead(statusCode, { 'Content-Type': 'image/png' });
+	readStream.pipe(res).on('error', () => {
 		res.writeHead(500, { 'Content-Type': 'text/html' });
 		res.end('<h1>File could not be read</h1>');
 	});
