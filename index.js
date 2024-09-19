@@ -12,7 +12,17 @@ const { version, description } = require('./package.json');
 
 const middlewares = [cors(), helmet(), morgan, ratelimit, timeout()];
 
+const getClientIp = req => {
+	console.log(req.socket.remoteAddress);
+	console.log(req.headers['x-forwarded-for']);
+
+	const xForwardedFor = req.headers['x-forwarded-for'];
+	return xForwardedFor ? xForwardedFor.split(',')[0].trim() : req.socket.remoteAddress;
+};
+
 const applyMiddlewares = async (req, res) => {
+	req.clientIp = getClientIp(req);
+
 	try {
 		for (const middleware of middlewares) {
 			await new Promise((resolve, reject) => middleware(req, res, err => (err ? reject(err) : resolve())));
@@ -36,7 +46,8 @@ const server = http.createServer(async (req, res) => {
 				status: 200,
 				message: description,
 				version,
-				github: 'https://github.com/sefinek24/node-sharex-server'
+				github: 'https://github.com/sefinek24/node-sharex-server',
+				ip: req.clientIp
 			}, null, 3));
 		} else {
 			await serveStaticFiles(req, res);
