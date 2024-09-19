@@ -1,3 +1,5 @@
 const morgan = require('morgan');
 
-module.exports = morgan('[:status :method :response-time ms] :url :user-agent :remote-addr ":referrer"');
+morgan.token('real-ip', req => req.clientRealIP || req.socket.remoteAddress);
+
+module.exports = morgan('[:status :method :response-time ms] :url :user-agent :real-ip ":referrer"');

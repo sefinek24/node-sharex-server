@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
 	if (process.env.NODE_ENV === 'development') return next();
 
 	const currentTime = Date.now();
-	const ip = req.socket.remoteAddress;
+	const ip = req.clientRealIP;
 
 	const entry = rateLimitMap.get(ip) || { count: 0, startTime: currentTime };
 	if (currentTime - entry.startTime > WINDOW_MS) {

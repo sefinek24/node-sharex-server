@@ -14,7 +14,7 @@ const { version, description } = require('./package.json');
 const middlewares = [cors(), helmet(), morgan, ratelimit, timeout()];
 
 const applyMiddlewares = async (req, res) => {
-	req.clientIp = getClientIp(req);
+	req.clientRealIP = getClientIp(req);
 
 	try {
 		for (const middleware of middlewares) {
@@ -40,7 +40,7 @@ const server = http.createServer(async (req, res) => {
 				message: description,
 				version,
 				github: 'https://github.com/sefinek24/node-sharex-server',
-				ip: req.clientIp
+				ip: req.clientRealIP
 			}, null, 3));
 		} else {
 			await serveStaticFiles(req, res);
