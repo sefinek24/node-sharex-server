@@ -39,8 +39,8 @@ const server = http.createServer(async (req, res) => {
 				status: 200,
 				message: description,
 				version,
-				github: 'https://github.com/sefinek24/node-sharex-server',
-				ip: req.clientRealIP
+				github: 'https://github.com/sefinek24/node-sharex-server'
+				// ip: req.clientRealIP
 			}, null, 3));
 		} else {
 			await serveStaticFiles(req, res);
