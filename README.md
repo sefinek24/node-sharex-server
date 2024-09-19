@@ -19,11 +19,11 @@ Being an administrator, you can delete screenshots from the server with just a f
 
 ## ☁️ Cloudflare Integration
 - For those utilizing [Cloudflare](https://www.cloudflare.com), enhancing your security measures by incorporating specific expressions into the [Web Application Firewall](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf) (WAF) comes highly recommended.
-This approach can significantly bolster your website's defense.
-Please visit [this](https://github.com/sefinek24/cloudflare-waf-expressions) repository.
+  This approach can significantly bolster your website's defense.
+  Please visit [this](https://github.com/sefinek24/cloudflare-waf-expressions) repository.
 
 - If you are using any proxy server (for example, Cloudflare), make sure to adjust the `trust proxy` setting in the [index.js](index.js) file.
-A value of 1 indicates a single proxy server. This adjustment is necessary for the server to accurately read the IP addresses of visitors.
+  A value of 1 indicates a single proxy server. This adjustment is necessary for the server to accurately read the IP addresses of visitors.
 
 ## 📝 How to use?
 1. Clone the repository:
@@ -32,19 +32,19 @@ A value of 1 indicates a single proxy server. This adjustment is necessary for t
     ```
 2. Install the necessary packages using `npm install`.
 3. Rename the `.env.default` file to `.env` and fill in the necessary data.
-4. Run the server using `node .`.
+4. Run the server using: `node .`
 5. Hosting:
     - **At home (if you lack open ports or an external IP)** \
-        See [Cloudflare Tunnel Documentation](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel). Remember, your domain must have Cloudflare DNS settings (at least that's what I believe).
+      See [Cloudflare Tunnel Documentation](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel). Remember, your domain must have Cloudflare DNS settings (at least that's what I believe).
 6. File server:
     - **SAMBA** \
-        See [this](https://phoenixnap.com/kb/ubuntu-samba) tutorial.
+      See [this](https://phoenixnap.com/kb/ubuntu-samba) tutorial.
 7. Configuration:
-   - **Windows** \
-     ![windows.png](images/readme/windows.png)
-   - **Sharex** \
-     ![sharex-smb.png](images/readme/sharex-smb.png) \
-     ![paths.png](images/readme/paths.png)
+    - **Windows** \
+      ![windows.png](images/readme/windows.png)
+    - **Sharex** \
+      ![sharex-smb.png](images/readme/sharex-smb.png) \
+      ![paths.png](images/readme/paths.png)
 8. That's it! You can now take screenshots and upload them to your server.
 
 ## 💙 Thank you
