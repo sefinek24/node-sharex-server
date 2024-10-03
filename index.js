@@ -11,7 +11,7 @@ const { internalError } = require('./middlewares/other/errors.js');
 const serveStaticFiles = require('./middlewares/other/serve.js');
 const { version, description } = require('./package.json');
 
-const middlewares = [helmet(), cors(), morgan, ratelimit, timeout];
+const middlewares = [cors(), helmet({ crossOriginResourcePolicy: false }), morgan, ratelimit, timeout];
 
 const applyMiddlewares = async (req, res) => {
 	req.clientRealIP = getClientIp(req);
