@@ -57,7 +57,7 @@ server.listen(process.env.PORT, () => {
 		} catch (err) {
 			console.log('Failed to send ready signal to parent process.', err.message);
 		}
-	} else {
-		console.log(`Server running at http://127.0.0.1:${process.env.PORT}`);
 	}
+
+	console.log(`The server is running at http://127.0.0.1:${process.env.PORT}`);
 });
