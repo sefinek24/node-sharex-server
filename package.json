@@ -21,12 +21,12 @@
   },
   "dependencies": {
     "cors": "^2.8.6",
-    "helmet": "^8.1.0",
-    "morgan": "^1.10.1",
+    "helmet": "^8.2.0",
+    "morgan": "^1.11.0",
     "serve-static": "^2.2.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "globals": "^17.1.0"
+    "@eslint/js": "^10.0.1",
+    "globals": "^17.6.0"
   }
 }
