@@ -1,6 +1,6 @@
 {
   "name": "node-sharex-server",
-  "version": "2.2.0-rc.2+20260126",
+  "version": "2.2.0-rc.3+20260816",
   "description": "Node.js project for hosting screenshots captured with ShareX.",
   "homepage": "https://github.com/sefinek/Node-Sharex-Servert#readme",
   "bugs": {
@@ -21,12 +21,12 @@
   },
   "dependencies": {
     "cors": "^2.8.6",
-    "helmet": "^8.2.0",
+    "helmet": "^8.3.0",
     "morgan": "^1.11.0",
     "serve-static": "^2.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "globals": "^17.6.0"
+    "globals": "^17.11.0"
   }
 }
